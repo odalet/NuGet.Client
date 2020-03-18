@@ -169,6 +169,7 @@ namespace NuGet.Commands
                     RuntimeIdentifier = targetGraph.RuntimeIdentifier
                 };
 
+                //  TODO NK - Figure things out here how to propagate things.
                 var flattenedFlags = IncludeFlagUtils.FlattenDependencyTypes(_includeFlagGraphs, project, targetGraph);
 
                 // Check if warnings should be displayed for the current framework.

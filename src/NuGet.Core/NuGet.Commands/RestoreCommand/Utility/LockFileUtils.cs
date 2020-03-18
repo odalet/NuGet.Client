@@ -164,6 +164,7 @@ namespace NuGet.Commands
                 targetGraph.Conventions.Patterns.CompileRefAssemblies,
                 targetGraph.Conventions.Patterns.CompileLibAssemblies);
 
+            // TODO NK
             lockFileLib.CompileTimeAssemblies.AddRange(compileGroup);
 
             // Runtime
@@ -755,21 +756,6 @@ namespace NuGet.Commands
             return managedCriteria;
         }
 
-        private static bool HasItems(ContentItemGroup compileGroup)
-        {
-            return (compileGroup != null && compileGroup.Items.Any());
-        }
-
-        private static LockFileItem ToResourceLockFileItem(ContentItem item)
-        {
-            return new LockFileItem(item.Path)
-            {
-                Properties =
-                {
-                    { "locale", item.Properties["locale"].ToString()}
-                }
-            };
-        }
 
         /// <summary>
         /// Clears a lock file group and replaces the first item with _._ if 

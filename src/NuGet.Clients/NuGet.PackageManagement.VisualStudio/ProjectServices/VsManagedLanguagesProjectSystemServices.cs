@@ -65,6 +65,7 @@ namespace NuGet.PackageManagement.VisualStudio
             _referenceMetadata.SetValue(ProjectItemProperties.PrivateAssets, 2);
             _referenceMetadata.SetValue(ProjectItemProperties.NoWarn, 3);
             _referenceMetadata.SetValue(ProjectItemProperties.GeneratePathProperty, 4);
+            _referenceMetadata.SetValue(ProjectItemProperties.Aliases, 5);
         }
 
         public VsManagedLanguagesProjectSystemServices(
@@ -197,6 +198,7 @@ namespace NuGet.PackageManagement.VisualStudio
             {
                 AutoReferenced = MSBuildStringUtility.IsTrue(GetReferenceMetadataValue(reference, ProjectItemProperties.IsImplicitlyDefined)),
                 GeneratePathProperty = MSBuildStringUtility.IsTrue(GetReferenceMetadataValue(reference, ProjectItemProperties.GeneratePathProperty)),
+                Aliases = GetReferenceMetadataValue(reference, ProjectItemProperties.Aliases),
                 LibraryRange = new LibraryRange(
                     name: reference.Name,
                     versionRange: VersionRange.Parse(reference.Version),

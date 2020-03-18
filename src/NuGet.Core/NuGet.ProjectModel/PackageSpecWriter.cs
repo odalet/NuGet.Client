@@ -442,6 +442,10 @@ namespace NuGet.ProjectModel
 
                     SetValueIfTrue(writer, "generatePathProperty", dependency.GeneratePathProperty);
                     SetValueIfTrue(writer, "versionCentrallyManaged", dependency.VersionCentrallyManaged);
+                    if (!string.IsNullOrEmpty(dependency.Aliases))
+                    {
+                        SetValue(writer, "aliases", dependency.Aliases);
+                    }
 
                     writer.WriteObjectEnd();
                 }
