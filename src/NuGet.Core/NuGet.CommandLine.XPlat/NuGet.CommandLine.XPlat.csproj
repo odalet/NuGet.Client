@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" NoWarn="NU1604" />
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" />
     <PackageReference Include="System.Runtime.Serialization.Primitives" />
   </ItemGroup>
